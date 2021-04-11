@@ -23,7 +23,6 @@ class UserForm(UserCreationForm):
 class TypesForm(forms.Form):
 
     commonusers = forms.BooleanField(required=False)
-    masterusers = forms.BooleanField(required=False)
 
     Hfield = forms.CharField(required=False,widget =forms.HiddenInput, validators=[validators.MaxLengthValidator(0)])
 
