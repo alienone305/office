@@ -20,7 +20,7 @@ from commonuser.forms import CommonUserForm
 def CommonUserSignupView(request):
 
     now = datetime.datetime.now()
-        if request.method == 'POST':
+    if request.method == 'POST':
 
             user_form = UserForm(data = request.POST)
             commonuser_form = CommonUserForm(data = request.POST)
@@ -48,10 +48,10 @@ def CommonUserSignupView(request):
                 print(user_form.errors,commonuser_form.errors)
 
 
-        else:
+    else:
             user_form = UserForm()
             commonuser_form = CommonUserForm()
 
-        return render(request,'commonuser/commonusersignup.html',
+            return render(request,'commonuser/commonusersignup.html',
                               {'user_form':user_form,
                                'commonuser_form':commonuser_form})

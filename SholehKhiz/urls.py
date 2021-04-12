@@ -24,5 +24,6 @@ urlpatterns = [
     path('',HomeView,name = 'home'),
     path('admin/', admin.site.urls),
     path('superuser/', include('accounts.urls',namespace = 'accounts')),
+    path('users/',include('commonuser.urls', namespace = 'commonuser')),
     path('',include('django.contrib.auth.urls')),
 ]+ static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
